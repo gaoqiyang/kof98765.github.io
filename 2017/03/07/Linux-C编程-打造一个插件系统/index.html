@@ -3,14 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Linux C编程:打造一个插件系统 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="运行环境：linux使用语言：c 或者c++
+插件，很多人用过，比如游戏插件，编辑器插件这些，最著名的就数魔兽大脚插件啦，还有vim插件啦，eclipse插件啦，等等插件有很多种形式，最常见的就是so文件，在windows上就是各种的dll啦
+下面就让我们来了解一下插件式编程吧〜〜
+举个例子，你开发了一个游戏，一开始只有三个关卡，分享给了你的小伙伴玩大家玩得很爽，但很快，游戏通关了，还想玩，这时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux C编程:打造一个插件系统">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/Linux-C编程-打造一个插件系统/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="运行环境：linux使用语言：c 或者c++
+插件，很多人用过，比如游戏插件，编辑器插件这些，最著名的就数魔兽大脚插件啦，还有vim插件啦，eclipse插件啦，等等插件有很多种形式，最常见的就是so文件，在windows上就是各种的dll啦
+下面就让我们来了解一下插件式编程吧〜〜
+举个例子，你开发了一个游戏，一开始只有三个关卡，分享给了你的小伙伴玩大家玩得很爽，但很快，游戏通关了，还想玩，这时候">
+<meta property="og:updated_time" content="2017-03-08T01:01:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux C编程:打造一个插件系统">
+<meta name="twitter:description" content="运行环境：linux使用语言：c 或者c++
+插件，很多人用过，比如游戏插件，编辑器插件这些，最著名的就数魔兽大脚插件啦，还有vim插件啦，eclipse插件啦，等等插件有很多种形式，最常见的就是so文件，在windows上就是各种的dll啦
+下面就让我们来了解一下插件式编程吧〜〜
+举个例子，你开发了一个游戏，一开始只有三个关卡，分享给了你的小伙伴玩大家玩得很爽，但很快，游戏通关了，还想玩，这时候">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +72,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Linux-C编程-打造一个插件系统" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Linux-C编程-打造一个插件系统" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/07/Linux-C编程-打造一个插件系统/" class="article-date">
   <time datetime="2017-03-07T13:16:36.000Z" itemprop="datePublished">2017-03-07</time>
@@ -74,8 +85,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/07/Linux-C编程-打造一个插件系统/">Linux C编程:打造一个插件系统</a>
+    <h1 class="article-title" itemprop="name">
+      Linux C编程:打造一个插件系统
     </h1>
   
 
@@ -195,96 +206,19 @@ return count;
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-关于Qt输出中文文件名乱码的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/07/关于Qt输出中文文件名乱码的问题/" class="article-date">
-  <time datetime="2017-03-07T04:21:26.000Z" itemprop="datePublished">2017-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/07/关于Qt输出中文文件名乱码的问题/">关于Qt输出中文文件名乱码的问题</a>
-    </h1>
+    <a href="/2017/03/07/关于Qt输出中文文件名乱码的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于Qt输出中文文件名乱码的问题</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近为项目添加一个电能数据导出的功能<br>导出的格式为csv,一开始文件名是1.csv,2.csv这样的，不过客户不满意呀〜〜<br>那只能改成带有中文的呗</p>
-<p>环境：嵌入式linux<br>文件编码:utf-8</p>
-<p>QFile f;<br>QString head=QString(“time,current,voltage,activePower,reactivePower,energy\n”);<br>QString name=QString(“%1/直流支路%2数据.csv”).arg(“data”).arg(i+1);<br>QString energyData=”12344”;<br>f.setFileName(name);<br>f.open(QIODevice::WriteOnly);<br>f.write(head.toLocal8Bit());<br>f.write(energyData.toUtf8());<br>f.close();</p>
-<p>在嵌入式linux下，输出的文件名是乱码〜，因为在嵌入式linux下没有做中文处理<br>不要紧，把文件输出到windows就行<br>有一点要注意，这块代码的编码必须是utf-8的。。。<br>平时我处理中文的时候，一般都会使用gbk编码来存代码，结果嘛，各种乱码输出。。。</p>
-<p>这段代码唯一不足的就是head不能是中文，残念。。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/07/关于Qt输出中文文件名乱码的问题/" data-id="cj009eusa0002a6vvh1yqd9bc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/05/hello-world/" class="article-date">
-  <time datetime="2017-03-05T08:33:01.000Z" itemprop="datePublished">2017-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/05/hello-world/" data-id="cj009eus70001a6vvnyw0jbnp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
